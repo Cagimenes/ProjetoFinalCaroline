@@ -7,7 +7,7 @@ namespace ProjetoFinalCaroline.Models
     [Table("Usuario")]
     public class Usuario
     {
-        [Column("UsuarioId")]
+        [Column("Id")]
         [Display(Name = "Código do Usuário")]
         public int Id { get; set; }
 

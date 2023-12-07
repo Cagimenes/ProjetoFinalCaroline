@@ -12,7 +12,7 @@ using ProjetoFinalCaroline.Models;
 namespace ProjetoFinalCaroline.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20231205143016_Criacao-Inicial")]
+    [Migration("20231207104127_Criacao-Inicial")]
     partial class CriacaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("CidadeId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -53,7 +53,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ClienteId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -102,7 +102,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ColaboradorId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -146,7 +146,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("EstadoId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -165,7 +165,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("LocalRealizacaoId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -189,7 +189,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ProcedimentoId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -218,21 +218,21 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ProcedimentoRealizadoId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ClienteId")
+                    b.Property<int?>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ColaboradorId")
+                    b.Property<int?>("ColaboradorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataRealizacao")
                         .HasColumnType("datetime2")
                         .HasColumnName("DataRealizacao");
 
-                    b.Property<int>("LocalRealizacaoId")
+                    b.Property<int?>("LocalRealizacaoId")
                         .HasColumnType("int");
 
                     b.Property<string>("ObservacaoRealizacao")
@@ -240,7 +240,7 @@ namespace ProjetoFinalCaroline.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ObservacaoRealizacao");
 
-                    b.Property<int>("ProcedimentoId")
+                    b.Property<int?>("ProcedimentoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -261,7 +261,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("TipoColaboradorId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -280,7 +280,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("TipoProcedimentoId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -299,7 +299,7 @@ namespace ProjetoFinalCaroline.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("UsuarioId");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -390,27 +390,19 @@ namespace ProjetoFinalCaroline.Migrations
                 {
                     b.HasOne("ProjetoFinalCaroline.Models.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClienteId");
 
                     b.HasOne("ProjetoFinalCaroline.Models.Colaborador", "Colaborador")
                         .WithMany()
-                        .HasForeignKey("ColaboradorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ColaboradorId");
 
                     b.HasOne("ProjetoFinalCaroline.Models.LocalRealizacao", "LocalRealizacao")
                         .WithMany()
-                        .HasForeignKey("LocalRealizacaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LocalRealizacaoId");
 
                     b.HasOne("ProjetoFinalCaroline.Models.Procedimento", "Procedimento")
                         .WithMany()
-                        .HasForeignKey("ProcedimentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProcedimentoId");
 
                     b.Navigation("Cliente");
 

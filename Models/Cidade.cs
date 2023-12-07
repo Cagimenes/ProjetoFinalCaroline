@@ -7,7 +7,7 @@ namespace ProjetoFinalCaroline.Models
     [Table("Cidade")]
     public class Cidade
     {
-        [Column("CidadeId")]
+        [Column("Id")]
         [Display(Name = "Código do Cidade")]
         public int Id { get; set; }
 

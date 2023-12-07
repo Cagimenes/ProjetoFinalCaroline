@@ -1,0 +1,31 @@
+﻿@model ProjetoFinalCaroline.Models.Usuario
+@{
+    Layout = null;
+}
+<link href="~/css/login.css" rel="stylesheet" />
+<div class="text-center">
+    <form asp-action="Login">
+        <main class="box">
+                <h1>LOGIN</h1>
+                <form>
+                    <div class="form-input">
+                        <label asp-for="UsuarioEmail">Email</label>
+                        <input asp-for="UsuarioEmail" />
+                    </div>
+                    <div class ="form-input">
+                        <label asp-for="UsuarioSenha"></label>
+                        <input asp-for="UsuarioSenha" type="password" />
+                    </div>
+                    <br />
+                    <h4>@ViewBag.Mensagem</h4>
+                    <span asp-validation-for="UsuarioEmail"></span>
+                     <br />
+                    <span asp-validation-for="UsuarioSenha"></span>
+                    <br />
+                    <div class="btnEntrar">
+                        <input type="submit" value="Entrar" class="btn-1" />
+                    </div>
+                </form>
+        </main>
+    </form>
+</div>

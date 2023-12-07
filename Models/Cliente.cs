@@ -7,13 +7,13 @@ namespace ProjetoFinalCaroline.Models
     [Table("Cliente")]
     public class Cliente
     {
-        [Column("ClienteId")]
+        [Column("Id")]
         [Display(Name = "Código do Cliente")]
         public int Id { get; set; }
 
         [Column("ClienteNome")]
         [Display(Name = "Nome")]
-        public string CidadeNome { get; set; } = string.Empty;
+        public string ClienteNome { get; set; } = string.Empty;
 
         [Column("ClienteCpf")]
         [Display(Name = "Cpf")]

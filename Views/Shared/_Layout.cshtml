@@ -34,19 +34,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Colaborador" asp-action="Index">Colaborador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoColaborador" asp-action="Index">Tipo de Colaborador</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoColaborador" asp-action="Index">Tipo Colaborador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LocalRealizacao" asp-action="Index">Local de Realização</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="LocalRealizacao" asp-action="Index">Local Realização</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Procedimento" asp-action="Index">Procedimento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoProcedimento" asp-action="Index">Tipo de Procedimento</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoProcedimento" asp-action="Index">Tipo Procedimento</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ProcedimentoRealizado" asp-action="Index">Procedimento Realizado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuário</a>
                         </li>
                     </ul>
                 </div>
@@ -54,7 +57,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>

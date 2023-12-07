@@ -13,46 +13,46 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "Estado",
                 columns: table => new
                 {
-                    EstadoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EstadoNome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Estado", x => x.EstadoId);
+                    table.PrimaryKey("PK_Estado", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "TipoColaborador",
                 columns: table => new
                 {
-                    TipoColaboradorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TipoColaboradorNome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoColaborador", x => x.TipoColaboradorId);
+                    table.PrimaryKey("PK_TipoColaborador", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "TipoProcedimento",
                 columns: table => new
                 {
-                    TipoProcedimentoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TipoProcedimentoNome = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoProcedimento", x => x.TipoProcedimentoId);
+                    table.PrimaryKey("PK_TipoProcedimento", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
-                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UsuarioNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UsuarioEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -60,26 +60,26 @@ namespace ProjetoFinalCaroline.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Cidade",
                 columns: table => new
                 {
-                    CidadeId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CidadeNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstadoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cidade", x => x.CidadeId);
+                    table.PrimaryKey("PK_Cidade", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Cidade_Estado_EstadoId",
                         column: x => x.EstadoId,
                         principalTable: "Estado",
-                        principalColumn: "EstadoId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -87,7 +87,7 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "Procedimento",
                 columns: table => new
                 {
-                    ProcedimentoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProcedimentoNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProcedimentoObservacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -95,12 +95,12 @@ namespace ProjetoFinalCaroline.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Procedimento", x => x.ProcedimentoId);
+                    table.PrimaryKey("PK_Procedimento", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Procedimento_TipoProcedimento_TipoProcedimentoId",
                         column: x => x.TipoProcedimentoId,
                         principalTable: "TipoProcedimento",
-                        principalColumn: "TipoProcedimentoId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -108,7 +108,7 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "Cliente",
                 columns: table => new
                 {
-                    ClienteId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClienteNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ClienteCpf = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -120,12 +120,12 @@ namespace ProjetoFinalCaroline.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cliente", x => x.ClienteId);
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Cliente_Cidade_CidadeId",
                         column: x => x.CidadeId,
                         principalTable: "Cidade",
-                        principalColumn: "CidadeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -133,7 +133,7 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "Colaborador",
                 columns: table => new
                 {
-                    ColaboradorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ColaboradorNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ColaboradorCpf = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -144,18 +144,18 @@ namespace ProjetoFinalCaroline.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Colaborador", x => x.ColaboradorId);
+                    table.PrimaryKey("PK_Colaborador", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Colaborador_Cidade_CidadeId",
                         column: x => x.CidadeId,
                         principalTable: "Cidade",
-                        principalColumn: "CidadeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Colaborador_TipoColaborador_TipoColaboradorId",
                         column: x => x.TipoColaboradorId,
                         principalTable: "TipoColaborador",
-                        principalColumn: "TipoColaboradorId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -163,19 +163,19 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "LocalRealizacao",
                 columns: table => new
                 {
-                    LocalRealizacaoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LocalNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CidadeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LocalRealizacao", x => x.LocalRealizacaoId);
+                    table.PrimaryKey("PK_LocalRealizacao", x => x.Id);
                     table.ForeignKey(
                         name: "FK_LocalRealizacao_Cidade_CidadeId",
                         column: x => x.CidadeId,
                         principalTable: "Cidade",
-                        principalColumn: "CidadeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -183,42 +183,38 @@ namespace ProjetoFinalCaroline.Migrations
                 name: "ProcedimentoRealizado",
                 columns: table => new
                 {
-                    ProcedimentoRealizadoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ClienteId = table.Column<int>(type: "int", nullable: false),
-                    ProcedimentoId = table.Column<int>(type: "int", nullable: false),
-                    ColaboradorId = table.Column<int>(type: "int", nullable: false),
-                    LocalRealizacaoId = table.Column<int>(type: "int", nullable: false),
+                    ClienteId = table.Column<int>(type: "int", nullable: true),
+                    ProcedimentoId = table.Column<int>(type: "int", nullable: true),
+                    ColaboradorId = table.Column<int>(type: "int", nullable: true),
+                    LocalRealizacaoId = table.Column<int>(type: "int", nullable: true),
                     DataRealizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ObservacaoRealizacao = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProcedimentoRealizado", x => x.ProcedimentoRealizadoId);
+                    table.PrimaryKey("PK_ProcedimentoRealizado", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ProcedimentoRealizado_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
-                        principalColumn: "ClienteId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ProcedimentoRealizado_Colaborador_ColaboradorId",
                         column: x => x.ColaboradorId,
                         principalTable: "Colaborador",
-                        principalColumn: "ColaboradorId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ProcedimentoRealizado_LocalRealizacao_LocalRealizacaoId",
                         column: x => x.LocalRealizacaoId,
                         principalTable: "LocalRealizacao",
-                        principalColumn: "LocalRealizacaoId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ProcedimentoRealizado_Procedimento_ProcedimentoId",
                         column: x => x.ProcedimentoId,
                         principalTable: "Procedimento",
-                        principalColumn: "ProcedimentoId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

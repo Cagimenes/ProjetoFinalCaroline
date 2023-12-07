@@ -6,7 +6,7 @@ namespace ProjetoFinalCaroline.Models
     [Table("Procedimento")]
     public class Procedimento
     {
-        [Column("ProcedimentoId")]
+        [Column("Id")]
         [Display(Name = "Código do Procedimento")]
         public int Id { get; set; }
 

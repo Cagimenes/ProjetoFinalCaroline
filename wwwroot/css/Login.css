@@ -1,0 +1,73 @@
+﻿main, div {
+    border: 0;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.box {
+    display: block;
+    background-color: #DAF8CF;
+    width: 620px;
+    height: 350px;
+    border-radius: 10px;
+    border: 3px solid #2D7013;
+    margin: 200px auto;
+}
+
+.box h1 {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 30px;
+    color: #2D7013;
+    margin-top: 20px;
+}
+
+.box h2 {
+    font-size: 16px;
+    margin-left: 65px;
+    width: 340px;
+    margin-top: 10px;
+}
+
+.form-input {
+    margin-top: 38px;
+    text-align: center;
+}
+
+.form-input label {
+    display: block;
+    margin-top: 3px;
+}
+
+.form-input input {
+    margin-top: 4px;
+    padding: 5px;
+    padding-left: 8px;
+    background: #FFFFFFC7;
+    border: none;
+    border-radius: 7px;
+    width: 70%;
+    height: 30px;
+}
+
+.btnEntrar {
+    margin-top: -51px;
+    padding: 5px;
+    padding-left: 8px;
+    text-align: center;
+}
+
+.btn-1 {
+    background-color: #69C66B;
+    border: 3px solid #2D7013;
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    height: 45px;
+    width: 344px;
+    margin-top: 4px;
+}

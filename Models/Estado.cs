@@ -7,7 +7,7 @@ namespace ProjetoFinalCaroline.Models
     [Table("Estado")]
     public class Estado
     {
-        [Column("EstadoId")]
+        [Column("Id")]
         [Display(Name = "Código do Estado")]
         public int Id { get; set; }
 

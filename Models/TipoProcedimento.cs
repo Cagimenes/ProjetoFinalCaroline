@@ -6,12 +6,12 @@ namespace ProjetoFinalCaroline.Models
     [Table("TipoProcedimento")]
     public class TipoProcedimento
     {
-        [Column("TipoProcedimentoId")]
+        [Column("Id")]
         [Display(Name = "Código do Tipo de Procedimento")]
         public int Id { get; set; }
 
         [Column("TipoProcedimentoNome")]
         [Display(Name = "Tipo de Procedimento")]
-        public string EstadoNome { get; set; } = string.Empty;
+        public string TipoProcedimentoNome { get; set; } = string.Empty;
     }
 }

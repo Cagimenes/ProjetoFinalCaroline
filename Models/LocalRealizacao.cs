@@ -6,7 +6,7 @@ namespace ProjetoFinalCaroline.Models
 {
     public class LocalRealizacao
     {
-        [Column("LocalRealizacaoId")]
+        [Column("Id")]
         [Display(Name = "Código do Local")]
         public int Id { get; set; }
 
